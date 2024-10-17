@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spammer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Email Spammer</h1>
+        <form action="/send" method="POST">
+            <div class="form-group">
+                <label for="recipients">Recipients (comma-separated):</label>
+                <input type="text" id="recipients" name="recipients" placeholder="example1@gmail.com, example2@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Spam Subject" required>
+            </div>
+            <div class="form-group">
+                <label for="body">Body:</label>
+                <textarea id="body" name="body" rows="5" placeholder="Spam Body" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="num_emails">Number of Emails:</label>
+                <input type="number" id="num_emails" name="num_emails" min="1" max="1000" value="1" required>
+            </div>
+            <button type="submit">Send Spam Emails</button>
+        </form>
+    </div>
+</body>
+</html>
